@@ -655,7 +655,7 @@ a:hover {
 
 @media (max-width: 768px) {
     .dropdown-toggle {
-        padding: 12px 15px;
+        padding: 15px 20px;
         width: 100%;
         text-align: left;
     }
@@ -666,6 +666,8 @@ a:hover {
         width: 100%;
         box-shadow: none;
         background: #252525;
+        max-height: 50vh;
+        overflow-y: auto;
     }
 
     .dropdown.active .dropdown-menu {
@@ -673,7 +675,7 @@ a:hover {
     }
 
     .sub-dropdown-toggle {
-        padding: 10px 20px;
+        padding: 15px 20px;
     }
 
     .sub-dropdown-menu {
@@ -683,6 +685,8 @@ a:hover {
         background: #1E1E1E; /* Darker for nesting contrast */
         padding: 5px 0 5px 20px; /* Indent sub-menu */
         box-shadow: none;
+        max-height: 30vh;
+        overflow-y: auto;
     }
 
     .sub-dropdown.active .sub-dropdown-menu {
@@ -690,8 +694,19 @@ a:hover {
     }
 
     .sub-dropdown-menu a {
-        padding: 8px 15px;
+        padding: 12px 20px;
     }
+
+    .dropdown-toggle::after,
+    .sub-dropdown-toggle::after {
+        content: " ▾"; /* Down arrow */
+        float: right;
+    }
+    .dropdown.active .dropdown-toggle::after,
+    .sub-dropdown.active .sub-dropdown-toggle::after {
+        content: " ▴"; /* Up arrow */
+    }
+
 }
 
 @media (max-width: 768px) {
