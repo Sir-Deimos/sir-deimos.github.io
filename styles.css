@@ -27,7 +27,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 3; /* Above navbar */
 }
 
 .header h1 {
@@ -53,15 +53,24 @@ body {
     z-index: 3;
 }
 
+#navbar-container {
+    position: fixed;
+    top: 150px; /* Below header */
+    left: 0;
+    width: 100%;
+    z-index: 2; /* Above hero-section */
+    background: linear-gradient(135deg, #1a1a1a 0%, #2E2E2E 100%);
+    min-height: 50px; /* Reserve space before fetch */
+}
+
 .navbar {
     width: 100%;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2E2E2E 100%);
     padding: 10px 20px;
     box-shadow: 0 0 20px rgba(30, 30, 30, 0.5);
     position: fixed;
     top: 150px;
     left: 0;
-    z-index: 1;
+    z-index: 2;
     border-bottom: 1px solid rgba(225, 225, 225, 0.1);
 }
 
@@ -230,7 +239,9 @@ a:hover {
 .main-container {
     display: flex;
     min-height: calc(100vh - 200px);
-    margin-top: 200px;
+    margin-top: 200px; /* Header (150px) + Navbar (50px) */
+    position: relative;
+    z-index: 1;
 }
 
 .content {
@@ -260,8 +271,8 @@ a:hover {
 .hero-section {
     position: relative;
     width: 100%;
-    min-height: 600px; /* Large enough for content */
-    background-image: url('images/shashort.jpg'); /* Replace with your image */
+    min-height: 600px;
+    background-image: url('images/shashort.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -269,6 +280,7 @@ a:hover {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(30, 30, 30, 0.5);
+    z-index: 1; /* Below navbar */
 }
 
 .hero-content {
@@ -280,7 +292,7 @@ a:hover {
     align-items: center;
     justify-content: center;
     min-height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .highlights {
@@ -293,7 +305,7 @@ a:hover {
 }
 
 .highlight-item {
-    background: rgba(30, 30, 30, 0.8); /* Semi-transparent for contrast */
+    background: rgba(30, 30, 30, 0.8);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -333,7 +345,7 @@ a:hover {
 .call-to-action {
     text-align: center;
     padding: 20px;
-    background: rgba(46, 46, 46, 0.8); /* Semi-transparent for contrast */
+    background: rgba(46, 46, 46, 0.8);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 100%;
@@ -707,6 +719,10 @@ a:hover {
         display: block;
     }
 
+    #navbar-container {
+        top: 89.5px; /* Below mobile header */
+    }
+
     .navbar {
         width: 100%;
         padding: 15px;
@@ -716,7 +732,7 @@ a:hover {
         position: fixed;
         top: 89.5px;
         left: 0;
-        z-index: 1;
+        z-index: 2;
     }
 
     .navbar.collapsed {
@@ -794,7 +810,7 @@ a:hover {
     }
 
     .main-container {
-        margin-top: 89.5px;
+        margin-top: 89.5px; /* Header only, navbar overlays */
     }
 
     .content {
@@ -803,7 +819,7 @@ a:hover {
     }
 
     .hero-section {
-        min-height: 80vh; /* Adjusted for mobile */
+        min-height: 80vh;
         margin: 20px 0;
     }
 
@@ -812,7 +828,7 @@ a:hover {
     }
 
     .highlights {
-        grid-template-columns: 1fr; /* Stack on mobile */
+        grid-template-columns: 1fr;
         gap: 15px;
     }
 
@@ -826,7 +842,7 @@ a:hover {
 
     .call-to-action {
         padding: 15px;
-        max-width: 100%; /* Full width on mobile */
+        max-width: 100%;
     }
 
     .call-to-action h3 {
@@ -857,7 +873,7 @@ a:hover {
     }
 
     .hero-section {
-        min-height: 70vh; /* Further adjusted for smaller screens */
+        min-height: 70vh;
         margin: 15px 0;
     }
 
