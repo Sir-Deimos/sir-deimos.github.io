@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>West KY Autocross - Past Results</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <button class="menu-toggle">☰</button>
+    </div>
+    
+        <div class="navbar">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="events.html">Events</a>
+                <a href="rules-classes.html">Rules & Classes</a>
+                <a href="live-timing.html">Live Timing</a>
+                <a href="past-results.html">Past Results</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="https://www.facebook.com/groups/1651475209051934" target="_blank" class="facebook-logo-link">
+                <img src="images/facebook-icon.png" alt="Facebook Group" class="facebook-logo">
+                </a>
+            </div>
+        </div>
+        <div class="main-container">
+        <div class="content">
+            <h2>Past Results</h2>
+            <div class="results-accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">March 10, 2025</button>
+                    <div class="accordion-content">
+                        <a href="pastevent/10MAR25/classresults.html" class="result-link" target="_blank">Class Results</a>
+                        <a href="pastevent/10MAR25/rawresults.html" class="result-link" target="_blank">Raw Results</a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">February 15, 2025</button>
+                    <div class="accordion-content">
+                        <a href="pastevent/15FEB25/classresults.html" class="result-link" target="_blank">Class Results</a>
+                        <a href="pastevent/15FEB25/classresults.html" class="result-link" target="_blank">Raw Results</a>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">January 20, 2025</button>
+                    <div class="accordion-content">
+                        <a href="pastevent/20JAN25/classresults" class="result-link" target="_blank">Class Results</a>
+                        <a href="pastevent/20JAN25/rawresults" class="result-link" target="_blank">Raw Results</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Sidebar toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('collapsed');
+        });
+
+        // Accordion toggle
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                content.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

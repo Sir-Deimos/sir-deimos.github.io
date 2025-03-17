@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>West KY Autocross - Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <button class="menu-toggle">☰</button>
+    </div>
+    
+        <div class="navbar">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="events.html">Events</a>
+                <a href="rules-classes.html">Rules & Classes</a>
+                <a href="live-timing.html">Live Timing</a>
+                <a href="past-results.html">Past Results</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="https://www.facebook.com/groups/1651475209051934" target="_blank" class="facebook-logo-link">
+                <img src="images/facebook-icon.png" alt="Facebook Group" class="facebook-logo">
+                </a>
+            </div>
+        </div>
+        <div class="main-container">
+        <div class="content">
+            <h2>Contact Us</h2>
+            <p class="intro">Fill out the form below to get in touch with the West KY Autocross team! Whether you have questions about events, rules, or how to get involved, we’re here to help.</p>
+            <form id="contactForm" class="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+            <div id="popup" class="contact-popup">
+                <img src="images/spinny.gif" alt="Thank You"> 
+            </div>
+        </div>
+    </div>
+    <script>
+        // Sidebar toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('collapsed');
+        });
+
+        // Form submission and popup
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.reset();
+            document.getElementById('popup').style.display = 'block';
+        });
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,1 +1,85 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>West KY Autocross</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <button class="menu-toggle">☰</button>
+    </div>
+    <div class="navbar">
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="events.html">Events</a>
+            <a href="rules-classes.html">Rules & Classes</a>
+            <a href="live-timing.html">Live Timing</a>
+            <div class="dropdown">
+                <button class="dropdown-toggle">Past Results</button>
+                <div class="dropdown-menu">
+                    <div class="sub-dropdown">
+                        <button class="sub-dropdown-toggle">March 10, 2025</button>
+                        <div class="sub-dropdown-menu">
+                            <a href="pastevent/10MAR25/classresults.html" target="_blank">Class Results</a>
+                            <a href="pastevent/10MAR25/rawresults.html" target="_blank">Raw Results</a>
+                        </div>
+                    </div>
+                    <div class="sub-dropdown">
+                        <button class="sub-dropdown-toggle">February 15, 2025</button>
+                        <div class="sub-dropdown-menu">
+                            <a href="pastevent/15FEB25/classresults.html" target="_blank">Class Results</a>
+                            <a href="pastevent/15FEB25/rawresults.html" target="_blank">Raw Results</a>
+                        </div>
+                    </div>
+                    <div class="sub-dropdown">
+                        <button class="sub-dropdown-toggle">January 20, 2025</button>
+                        <div class="sub-dropdown-menu">
+                            <a href="pastevent/20JAN25/classresults.html" target="_blank">Class Results</a>
+                            <a href="pastevent/20JAN25/rawresults.html" target="_blank">Raw Results</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://www.facebook.com/groups/1651475209051934" target="_blank" class="facebook-logo-link">
+                <img src="images/facebook-icon.png" alt="Facebook Group" class="facebook-logo">
+            </a>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="content">
+            <h2>Welcome!</h2>
+            <p class="intro">
+                Get ready to rev your engines and test your skills at West Kentucky Autocross! We’re your premier destination for autocross racing in Western Kentucky, bringing together car enthusiasts, adrenaline junkies, and competitive drivers for thrilling events on challenging courses.
+            </p>
+            <!-- Rest of the content remains the same -->
+            <div class="highlights">
+                <div class="highlight-item">
+                    <h3>Exciting Events</h3>
+                    <p>Join us for a full season of autocross action, from spring kickoffs to fall finales. Check out our <a href="events.html">Events</a> page for the latest schedule!</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>Live(ish) Timing</h3>
+                    <p>Stay in the loop with almost real-time results during events. Visit <a href="live-timing.html">Live Timing</a> to see who’s topping the charts!</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>Past Glory</h3>
+                    <p>Relive the excitement of previous races with detailed results on our <a href="past-results.html">Past Results</a> page.</p>
+                </div>
+            </div>
+            <div class="call-to-action">
+                <h3>Get Involved</h3>
+                <p>Whether you’re a seasoned driver or a first-timer, we’d love to have you join the fun. Check out our <a href="gallery.html">Gallery</a> for a taste of the action, or drop us a line on the <a href="contact.html">Contact</a> page to learn more!</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.navbar').classList.toggle('collapsed');
+        });
+    </script>
+</body>
+</html>
