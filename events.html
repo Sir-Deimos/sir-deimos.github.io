@@ -39,9 +39,31 @@
         </div>
     </div>
     <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.navbar').classList.toggle('collapsed');
-        });
+        // Load navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+                // Add event listeners after navbar is loaded
+                document.querySelector('.menu-toggle').addEventListener('click', function() {
+                    document.querySelector('.navbar').classList.toggle('collapsed');
+                });
+                document.querySelector('.dropdown-toggle').addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        this.parentElement.classList.toggle('active');
+                    }
+                });
+                document.querySelectorAll('.sub-dropdown-toggle').forEach(toggle => {
+                    toggle.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            this.parentElement.classList.toggle('active');
+                        }
+                    });
+                });
+            })
+            .catch(error => console.error('Error loading navbar:', error));
     </script>
 </body>
 </html>
