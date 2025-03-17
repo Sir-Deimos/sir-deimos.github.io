@@ -958,3 +958,49 @@ a:hover {
         font-size: 0.9em;
     }
 }
+
+/* Hero Image Styles */
+.hero-image {
+    width: 100%;
+    margin: 30px 0; /* Space above and below */
+    overflow: hidden;
+    border-radius: 10px; /* Matches site aesthetic */
+    box-shadow: 0 0 20px rgba(30, 30, 30, 0.5); /* Subtle shadow */
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Ensures image fills space without distortion */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.hero-image img:hover {
+    transform: scale(1.05); /* Slight zoom on hover for desktop */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .hero-image {
+        margin: 20px 0; /* Reduced spacing for mobile */
+    }
+
+    .hero-image img {
+        max-height: 50vh; /* Limits height to avoid overwhelming mobile screens */
+    }
+
+    .hero-image img:hover {
+        transform: none; /* Disable hover effect on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-image {
+        margin: 15px 0;
+    }
+
+    .hero-image img {
+        max-height: 40vh; /* Further limit for smaller screens */
+    }
+}
