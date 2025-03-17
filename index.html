@@ -10,52 +10,13 @@
     <div class="header">
         <button class="menu-toggle">☰</button>
     </div>
-    <div class="navbar">
-        <div class="links">
-            <a href="index.html">Home</a>
-            <a href="events.html">Events</a>
-            <a href="rules-classes.html">Rules & Classes</a>
-            <a href="live-timing.html">Live Timing</a>
-            <div class="dropdown">
-                <button class="dropdown-toggle">Past Results</button>
-                <div class="dropdown-menu">
-                    <div class="sub-dropdown">
-                        <button class="sub-dropdown-toggle">March 10, 2025</button>
-                        <div class="sub-dropdown-menu">
-                            <a href="pastevent/10MAR25/classresults.html" target="_blank">Class Results</a>
-                            <a href="pastevent/10MAR25/rawresults.html" target="_blank">Raw Results</a>
-                        </div>
-                    </div>
-                    <div class="sub-dropdown">
-                        <button class="sub-dropdown-toggle">February 15, 2025</button>
-                        <div class="sub-dropdown-menu">
-                            <a href="pastevent/15FEB25/classresults.html" target="_blank">Class Results</a>
-                            <a href="pastevent/15FEB25/rawresults.html" target="_blank">Raw Results</a>
-                        </div>
-                    </div>
-                    <div class="sub-dropdown">
-                        <button class="sub-dropdown-toggle">January 20, 2025</button>
-                        <div class="sub-dropdown-menu">
-                            <a href="pastevent/20JAN25/classresults.html" target="_blank">Class Results</a>
-                            <a href="pastevent/20JAN25/rawresults.html" target="_blank">Raw Results</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a href="gallery.html">Gallery</a>
-            <a href="contact.html">Contact</a>
-            <a href="https://www.facebook.com/groups/1651475209051934" target="_blank" class="facebook-logo-link">
-                <img src="images/facebook-icon.png" alt="Facebook Group" class="facebook-logo">
-            </a>
-        </div>
-    </div>
+    <div id="navbar-container"></div> <!-- Placeholder for navbar -->
     <div class="main-container">
         <div class="content">
             <h2>Welcome!</h2>
             <p class="intro">
                 Get ready to rev your engines and test your skills at West Kentucky Autocross! We’re your premier destination for autocross racing in Western Kentucky, bringing together car enthusiasts, adrenaline junkies, and competitive drivers for thrilling events on challenging courses.
             </p>
-            <!-- Rest of the content remains the same -->
             <div class="highlights">
                 <div class="highlight-item">
                     <h3>Exciting Events</h3>
@@ -77,9 +38,31 @@
         </div>
     </div>
     <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.navbar').classList.toggle('collapsed');
-        });
+        // Load navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+                // Add event listeners after navbar is loaded
+                document.querySelector('.menu-toggle').addEventListener('click', function() {
+                    document.querySelector('.navbar').classList.toggle('collapsed');
+                });
+                document.querySelector('.dropdown-toggle').addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        this.parentElement.classList.toggle('active');
+                    }
+                });
+                document.querySelectorAll('.sub-dropdown-toggle').forEach(toggle => {
+                    toggle.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            this.parentElement.classList.toggle('active');
+                        }
+                    });
+                });
+            })
+            .catch(error => console.error('Error loading navbar:', error));
     </script>
 </body>
 </html>
