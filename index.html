@@ -10,13 +10,9 @@
     <div class="header">
         <button class="menu-toggle">☰</button>
     </div>
-    <div id="navbar-container">Loading Navigation...</div> <!-- Placeholder for navbar -->
+    <div id="navbar-container">Loading Navigation...</div>
     <div class="main-container">
         <div class="content">
-            <h2>Welcome!</h2>
-            <p class="intro">
-                Get ready to rev your engines and test your skills at West Kentucky Autocross! We’re your premier destination for autocross racing in Western Kentucky, bringing together car enthusiasts, adrenaline junkies, and competitive drivers for thrilling events on challenging courses.
-            </p>
             <div class="hero-section">
                 <img src="images/shashort.jpg" alt="West KY Autocross Action" class="hero-image">
                 <div class="hero-content">
@@ -34,22 +30,23 @@
                             <p>Relive the excitement of previous races with detailed results—check the "Past Results" menu above!</p>
                         </div>
                     </div>
-                    <div class="call-to-action">
-                        <h3>Get Involved</h3>
-                        <p>Whether you’re a seasoned driver or a first-timer, we’d love to have you join the fun. Check out our <a href="gallery.html">Gallery</a> for a taste of the action, or drop us a line on the <a href="contact.html">Contact</a> page to learn more!</p>
-                    </div>
+                </div>
+                <div class="call-to-action">
+                    <h3>Get Involved</h3>
+                    <p>Whether you’re a seasoned driver or a first-timer, we’d love to have you join the fun. Check out our <a href="gallery.html">Gallery</a> for a taste of the action, or drop us a line on the <a href="contact.html">Contact</a> page to learn more!</p>
                 </div>
             </div>
-            
+            <h2>Welcome!</h2>
+            <p class="intro">
+                Get ready to rev your engines and test your skills at West Kentucky Autocross! We’re your premier destination for autocross racing in Western Kentucky, bringing together car enthusiasts, adrenaline junkies, and competitive drivers for thrilling events on challenging courses.
+            </p>
         </div>
     </div>
     <script>
-        // Load navbar
         fetch('navbar.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-container').innerHTML = data;
-                // Add event listeners after navbar is loaded
                 document.querySelector('.menu-toggle').addEventListener('click', function() {
                     document.querySelector('.navbar').classList.toggle('collapsed');
                 });
