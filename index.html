@@ -8,9 +8,10 @@
 </head>
 <body>
     <div class="header">
+        <h1>West KY Autocross</h1>
         <button class="menu-toggle">☰</button>
     </div>
-    <div id="navbar-container">Loading Navigation...</div>
+    <div id="navbar-container"></div>
     <div class="main-container">
         <div class="content">
             <div class="hero-section">
@@ -18,35 +19,63 @@
                 <div class="hero-content">
                     <div class="highlights">
                         <div class="highlight-item">
-                            <h3>Exciting Events</h3>
-                            <p>Join us for a full season of autocross action, from spring kickoffs to fall finales. Check out our <a href="events.html">Events</a> page for the latest schedule!</p>
+                            <h3>Highlight 1</h3>
+                            <p>Description 1</p>
                         </div>
                         <div class="highlight-item">
-                            <h3>Live(ish) Timing</h3>
-                            <p>Stay in the loop with almost real-time results during events. Visit <a href="live-timing.html">Live Timing</a> to see who’s topping the charts!</p>
+                            <h3>Highlight 2</h3>
+                            <p>Description 2</p>
                         </div>
                         <div class="highlight-item">
-                            <h3>Past Glory</h3>
-                            <p>Relive the excitement of previous races with detailed results—check the "Past Results" menu above!</p>
+                            <h3>Highlight 3</h3>
+                            <p>Description 3</p>
                         </div>
                     </div>
                 </div>
                 <div class="call-to-action">
-                    <h3>Get Involved</h3>
-                    <p>Whether you’re a seasoned driver or a first-timer, we’d love to have you join the fun. Check out our <a href="gallery.html">Gallery</a> for a taste of the action, or drop us a line on the <a href="contact.html">Contact</a> page to learn more!</p>
+                    <h3>Join Us!</h3>
+                    <p>Get involved today.</p>
                 </div>
             </div>
-            <h2>Welcome!</h2>
-            <p class="intro">
-                Get ready to rev your engines and test your skills at West Kentucky Autocross! We’re your premier destination for autocross racing in Western Kentucky, bringing together car enthusiasts, adrenaline junkies, and competitive drivers for thrilling events on challenging courses.
-            </p>
+            <p class="intro">Welcome to West KY Autocross! We’re excited to have you here...</p>
+            <div class="image-grid">
+                <div class="image-container">
+                    <img src="images/car005.jfif" alt="Gallery Image 1">
+                </div>
+                <div class="image-container">
+                    <img src="images/car008.jfif" alt="Gallery Image 2">
+                </div>
+                <div class="image-container">
+                    <img src="images/car004.jfif" alt="Gallery Image 3">
+                </div>
+                <div class="image-container">
+                    <img src="images/car003.jfif" alt="Gallery Image 4">
+                </div>
+                <div class="image-container">
+                    <img src="images/car001.jfif" alt="Gallery Image 5">
+                </div>
+                <div class="image-container">
+                    <img src="images/car002.jfif" alt="Gallery Image 6">
+                </div>
+                <div class="image-container">
+                    <img src="images/car006.jfif" alt="Gallery Image 7">
+                </div>
+                <div class="image-container">
+                    <img src="images/car009.jfif" alt="Gallery Image 8">
+                </div>
+                <div class="image-container">
+                    <img src="images/car007.jfif" alt="Gallery Image 9">
+                </div>
+            </div>
         </div>
     </div>
     <script>
+        // Load navbar
         fetch('navbar.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-container').innerHTML = data;
+                // Add event listeners after navbar is loaded
                 document.querySelector('.menu-toggle').addEventListener('click', function() {
                     document.querySelector('.navbar').classList.toggle('collapsed');
                 });

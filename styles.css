@@ -826,7 +826,7 @@ a:hover {
     }
 
     .navbar.collapsed ~ .main-container {
-        margin-top: 200px; /* Adjust based on navbar height */
+        margin-top: 200px;
     }
 
     .content {
@@ -852,14 +852,14 @@ a:hover {
         padding: 20px;
         justify-content: flex-start;
         z-index: 2;
-        max-height: 50%; /* Limit highlights to half the hero section */
-        overflow-y: auto; /* Scroll if too tall */
+        max-height: 50%;
+        overflow-y: auto;
     }
 
     .highlights {
         grid-template-columns: 1fr;
         gap: 15px;
-        margin-bottom: 0; /* Remove extra margin */
+        margin-bottom: 0;
     }
 
     .highlight-item {
@@ -873,12 +873,17 @@ a:hover {
     .call-to-action {
         padding: 15px;
         border-radius: 0 0 10px 10px;
-        bottom: 0; /* Ensure it stays at bottom */
+        bottom: 0;
         z-index: 2;
     }
 
     .call-to-action h3 {
         font-size: 1.5em;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr; /* Stack images on mobile */
+        padding: 15px;
     }
 }
 
