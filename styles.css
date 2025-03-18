@@ -14,7 +14,7 @@ body {
 
 .header {
     width: 100%;
-    height: 150px; /* Reverted to original */
+    height: 150px;
     background-color: #1a1a1a;
     background-image: url('images/header-image.png');
     background-repeat: no-repeat;
@@ -55,7 +55,7 @@ body {
 
 #navbar-container {
     position: fixed;
-    top: 150px; /* Reverted to original */
+    top: 150px;
     left: 0;
     width: 100%;
     z-index: 2;
@@ -68,7 +68,7 @@ body {
     padding: 10px 20px;
     box-shadow: 0 0 20px rgba(30, 30, 30, 0.5);
     position: fixed;
-    top: 150px; /* Reverted to original */
+    top: 150px;
     left: 0;
     z-index: 2;
     border-bottom: 1px solid rgba(225, 225, 225, 0.1);
@@ -238,8 +238,8 @@ a:hover {
 
 .main-container {
     display: flex;
-    min-height: calc(100vh - 180px); /* Reverted to original */
-    margin-top: 180px; /* Reverted to original */
+    min-height: calc(100vh - 180px);
+    margin-top: 180px;
     position: relative;
     z-index: 1;
 }
@@ -248,11 +248,10 @@ a:hover {
     flex: 1;
     padding: 40px;
     background: rgba(0, 0, 0, 0.5);
-    min-height: calc(100vh - 180px); /* Reverted to original */
+    min-height: calc(100vh - 180px);
     position: relative;
     display: flex;
     flex-direction: column;
-    /* Removed justify-content: space-between since call-to-action is now in hero-section */
 }
 
 .content h2 {
@@ -281,12 +280,13 @@ a:hover {
     z-index: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Space highlights and call-to-action */
+    justify-content: space-between;
 }
 
 .hero-image {
     display: block;
     width: 100%;
+    max-height: 1870px; /* For 3840x1920px */
     height: auto;
 }
 
@@ -356,10 +356,10 @@ a:hover {
     width: 100%;
     text-align: center;
     padding: 20px;
-    background: rgba(46, 46, 46, 0.8); /* Semi-transparent for overlay */
-    border-radius: 0 0 10px 10px; /* Match hero-section bottom corners */
+    background: rgba(46, 46, 46, 0.8);
+    border-radius: 0 0 10px 10px;
     box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
-    max-width: none; /* Full width inside image */
+    max-width: none;
 }
 
 .call-to-action h3 {
@@ -713,11 +713,7 @@ a:hover {
 @media (max-width: 768px) {
     .header {
         height: 89.5px;
-        background-color: #1a1a1a;
-        background-image: url('images/header-image.png');
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: 192px 67.125px;
+        background-size: 192px 67.125px; /* Reverted to original */
     }
 
     .header h1 {
@@ -731,6 +727,7 @@ a:hover {
 
     #navbar-container {
         top: 89.5px;
+        min-height: 0; /* Ensure no extra height when hidden */
     }
 
     .navbar {
@@ -743,6 +740,7 @@ a:hover {
         top: 89.5px;
         left: 0;
         z-index: 2;
+        transition: transform 0.3s ease; /* Smooth toggle */
     }
 
     .navbar.collapsed {
@@ -752,10 +750,12 @@ a:hover {
     .links {
         flex-direction: column;
         gap: 15px;
+        width: 100%; /* Ensure full width */
     }
 
     a {
         padding: 15px 20px;
+        display: block; /* Full width links */
     }
 
     a:hover {
@@ -820,32 +820,43 @@ a:hover {
     }
 
     .main-container {
-        margin-top: 109.5px;
-        min-height: calc(100vh - 109.5px);
+        margin-top: 89.5px; /* Align with header when navbar hidden */
+        min-height: calc(100vh - 89.5px);
+        transition: margin-top 0.3s ease; /* Smooth shift */
+    }
+
+    .navbar.collapsed ~ .main-container {
+        margin-top: 200px; /* Adjust when navbar visible, tweak based on navbar height */
     }
 
     .content {
         padding: 20px;
-        min-height: calc(100vh - 109.5px);
+        min-height: calc(100vh - 89.5px);
     }
 
     .hero-section {
         margin: 0 0 20px 0;
+        height: 80vh; /* Ensure full height */
     }
 
     .hero-image {
-        max-height: 80vh;
+        width: 100%;
+        height: 100%; /* Fill hero-section */
+        max-height: none; /* Remove cap for mobile */
         object-fit: cover;
+        display: block;
     }
 
     .hero-content {
         padding: 20px;
         justify-content: flex-start;
+        z-index: 2; /* Above image */
     }
 
     .highlights {
         grid-template-columns: 1fr;
         gap: 15px;
+        margin-bottom: 10px; /* Reduce overlap with call-to-action */
     }
 
     .highlight-item {
@@ -858,7 +869,7 @@ a:hover {
 
     .call-to-action {
         padding: 15px;
-        border-radius: 0 0 10px 10px; /* Maintain bottom rounding */
+        border-radius: 0 0 10px 10px;
     }
 
     .call-to-action h3 {
@@ -890,10 +901,7 @@ a:hover {
 
     .hero-section {
         margin: 0 0 15px 0;
-    }
-
-    .hero-image {
-        max-height: 70vh;
+        height: 70vh; /* Smaller screens */
     }
 
     .hero-content {
